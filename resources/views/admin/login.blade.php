@@ -26,6 +26,12 @@
         @if (session('fail'))
             <div class="alert alert-danger">{{ session('fail') }}</div>
         @endif
+        @if (session('success'))
+            <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
+        @if (session('error'))
+            <div class="alert alert-success">{{ session('error') }}</div>
+        @endif
         <div class="card">
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
