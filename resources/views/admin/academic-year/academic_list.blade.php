@@ -34,16 +34,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($academicyears as $sl=>$academicyear)
                                     <tr>
-                                        <td>Misc</td>
-                                        <td>PSP browser</td>
-                                        <td>PSP</td>
+                                        <td>{{ $sl+1 }}</td>
+                                        <td>{{ $academicyear->name }}</td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <a href="{{ route('academicyear.edit',$academicyear->id) }}" class="btn btn-info shadow btn-xs sharp "><i class="fa-solid fa-pen-to-square"></i></a>
+                                                &nbsp;
+                                                <a href="" class="btn btn-danger shadow btn-xs sharp "><i class="fa fa-trash"></i></a>
+                                            </div>
+                                        </td>
                                     </tr>
-                                    <tr>
-                                        <td>Other browsers</td>
-                                        <td>All others</td>
-                                        <td>-</td>
-                                    </tr>
+                                    @endforeach
                                 </tbody>
                                 <tfoot>
                                     <tr>

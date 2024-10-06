@@ -328,6 +328,7 @@
     <script src="{{ asset('admin') }}/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
     <script src="{{ asset('admin') }}/plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="{{ asset('admin') }}/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+    <script src="https://kit.fontawesome.com/56a6d796f4.js" crossorigin="anonymous"></script>
 </body>
 
 <!-- Mirrored from adminlte.io/themes/v3/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 May 2024 05:16:08 GMT -->
