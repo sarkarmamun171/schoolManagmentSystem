@@ -3,6 +3,7 @@
 use App\Http\Controllers\AcademicYearController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ClassesController;
+use App\Http\Controllers\FeeHeadContoller;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -35,5 +36,11 @@ use Illuminate\Support\Facades\Route;
         Route::get('/add-class/edit/{id}',[ClassesController::class,'class_edit'])->name('admin.class.edit');
         Route::post('/add-class/update/{id}',[ClassesController::class,'class_update'])->name('admin.class.update');
         Route::get('/add-class/delete/{id}',[ClassesController::class,'class_delete'])->name('admin.class.delete');
+
+        //Fee Head
+        Route::get('/feehead/add',[FeeHeadContoller::class,'feehead_add'])->name('fee.head.add');
+        Route::post('/feehead/store',[FeeHeadContoller::class,'feehead_store'])->name('fee.head.store');
+        Route::get('/feehead/list',[FeeHeadContoller::class,'feehead_list'])->name('fee.head.list');
+        Route::get('/feehead/edit/{id}',[FeeHeadContoller::class,'feehead_edit'])->name('fee.head.edit');
     });
 // });
