@@ -269,7 +269,29 @@
                                 </li>
                             </ul>
                         </li>
-
+                        <li class="nav-item">
+                            <a href="{{ route('admin.add.class') }}" class="nav-link">
+                                <i class="fa-solid fa-pen-nib"></i>
+                                <p>
+                                    Class
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.add.class') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Class</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.class.list') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>List Class</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
 

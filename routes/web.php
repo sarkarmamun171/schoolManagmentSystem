@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AcademicYearController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ClassesController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -27,5 +28,12 @@ use Illuminate\Support\Facades\Route;
         Route::get('/academic-year/edit/{id}',[AcademicYearController::class,'edit'])->name('academicyear.edit');
         Route::post('/academic-year/update/{id}',[AcademicYearController::class,'update'])->name('academicyear.update');
 
+        //Class
+        Route::get('/add-class',[ClassesController::class,'add_class'])->name('admin.add.class');
+        Route::post('/add-class/store',[ClassesController::class,'store_class'])->name('admin.class.store');
+        Route::get('/add-class/list',[ClassesController::class,'class_list'])->name('admin.class.list');
+        Route::get('/add-class/edit/{id}',[ClassesController::class,'class_edit'])->name('admin.class.edit');
+        Route::post('/add-class/update/{id}',[ClassesController::class,'class_update'])->name('admin.class.update');
+        Route::get('/add-class/delete/{id}',[ClassesController::class,'class_delete'])->name('admin.class.delete');
     });
 // });
