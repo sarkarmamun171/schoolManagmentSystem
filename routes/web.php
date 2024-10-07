@@ -42,5 +42,7 @@ use Illuminate\Support\Facades\Route;
         Route::post('/feehead/store',[FeeHeadContoller::class,'feehead_store'])->name('fee.head.store');
         Route::get('/feehead/list',[FeeHeadContoller::class,'feehead_list'])->name('fee.head.list');
         Route::get('/feehead/edit/{id}',[FeeHeadContoller::class,'feehead_edit'])->name('fee.head.edit');
+        Route::post('/feehead/update/{id}',[FeeHeadContoller::class,'feehead_update'])->name('fee.head.update');
+        Route::get('/feehead/delete/{id}',[FeeHeadContoller::class,'feehead_delete'])->name('fee.head.delete');
     });
 // });

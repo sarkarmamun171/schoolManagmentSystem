@@ -48,7 +48,7 @@
                                             <div class="d-flex">
                                                 <a href="{{ route('fee.head.edit',$fee->id) }}" class="btn btn-info shadow btn-xs sharp "><i class="fa-solid fa-pen-to-square"></i></a>
                                                 &nbsp;
-                                                <a href="#" class="btn btn-danger shadow btn-xs sharp "><i class="fa fa-trash"></i></a>
+                                                <a href="{{ route('fee.head.delete',$fee->id) }}" class="btn btn-danger shadow btn-xs sharp "><i class="fa fa-trash"></i></a>
                                             </div>
                                         </td>
                                     </tr>

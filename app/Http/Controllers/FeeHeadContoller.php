@@ -33,4 +33,18 @@ class FeeHeadContoller extends Controller
            'fees'=>$fees,
         ]);
     }
+    public function feehead_update(Request $request,$id){
+        $request->validate([
+            'feehead_name'=>'required',
+        ]);
+        FeeHead::find($id)->update([
+            'feehead_name'=>$request->feehead_name,
+            'updated_at'=>Carbon::now(),
+        ]);
+        return back()->with('success','Fee Updated Successfully');
+    }
+    public function feehead_delete($id){
+        FeeHead::find($id)->delete();
+        return back()->with('success','Fee Deleted Successfully');
+    }
 }
