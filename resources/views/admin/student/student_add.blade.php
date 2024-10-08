@@ -10,7 +10,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
-                            <li class="breadcrumb-item active">Fee Structure</li>
+                            <li class="breadcrumb-item active">Student Added</li>
                         </ol>
                     </div>
                 </div>
@@ -26,9 +26,9 @@
                             <div class="alert alert-info">{{ session('success') }}</div>
                         @endif
                             <div class="card-header">
-                                <h3 class="card-title">Add Fee Structure</h3>
+                                <h3 class="card-title">Add Student</h3>
                             </div>
-                            <form action="{{ route('fee.str.store') }}" method="POST">
+                            <form action="{{ route('store.student') }}" method="POST">
                                 @csrf
                                 <div class="card-body">
                                     <div class="row">
@@ -76,7 +76,7 @@
                                         </div>
                                         <div class="form-group col-md-3">
                                             <label for="">Phone Number</label>
-                                            <input type="text" class="form-control" name="phone">
+                                            <input type="number" class="form-control" name="phone">
                                         </div>
                                         <div class="form-group col-md-3">
                                             <label for="">Email</label>

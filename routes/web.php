@@ -57,5 +57,6 @@ Route::group(['middleware' => 'admin.auth'], function () {
 
     //Student Managment
     Route::get('/student/add',[StudentController::class,'add_student'])->name('add.student');
+    Route::post('/student/store',[StudentController::class,'store_student'])->name('store.student');
 });
 // });
