@@ -4,6 +4,7 @@ use App\Http\Controllers\AcademicYearController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ClassesController;
 use App\Http\Controllers\FeeHeadContoller;
+use App\Http\Controllers\FeeStructureController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -44,5 +45,8 @@ use Illuminate\Support\Facades\Route;
         Route::get('/feehead/edit/{id}',[FeeHeadContoller::class,'feehead_edit'])->name('fee.head.edit');
         Route::post('/feehead/update/{id}',[FeeHeadContoller::class,'feehead_update'])->name('fee.head.update');
         Route::get('/feehead/delete/{id}',[FeeHeadContoller::class,'feehead_delete'])->name('fee.head.delete');
+
+        //Fee Structure
+        Route::get('/fee-structure/add',[FeeStructureController::class,'fee_str_add'])->name('fee.str.add');
     });
 // });
