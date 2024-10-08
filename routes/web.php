@@ -48,5 +48,10 @@ use Illuminate\Support\Facades\Route;
 
         //Fee Structure
         Route::get('/fee-structure/add',[FeeStructureController::class,'fee_str_add'])->name('fee.str.add');
+        Route::post('/fee-structure/store',[FeeStructureController::class,'fee_str_store'])->name('fee.str.store');
+        Route::get('/fee-structure/list',[FeeStructureController::class,'fee_str_list'])->name('fee.str.list');
+        Route::get('/fee-structure/edit/{id}',[FeeStructureController::class,'fee_str_edit'])->name('fee.str.edit');
+        Route::post('/fee-structure/update/{id}',[FeeStructureController::class,'fee_str_update'])->name('fee.str.update');
+        Route::get('/fee-structure/delete/{id}',[FeeStructureController::class,'fee_str_delete'])->name('fee.str.delete');
     });
 // });

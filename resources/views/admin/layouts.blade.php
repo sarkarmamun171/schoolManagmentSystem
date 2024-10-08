@@ -225,8 +225,6 @@
 
                         </li>
 
-
-
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-edit"></i>
@@ -245,7 +243,7 @@
                             </ul>
                         </li>
 
-                        <li class="nav-header">EXAMPLES</li>
+                        <li class="nav-header">System Analysis</li>
 
                         <li class="nav-item">
                             <a href="{{ route('academicyear.index') }}" class="nav-link">
@@ -330,7 +328,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="{{ route('fee.str.list') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>List Fee Structure</p>
                                     </a>
@@ -398,6 +396,15 @@
     <script src="https://kit.fontawesome.com/56a6d796f4.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+    {{-- <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script> --}}
+
+
+
+
+    @yield('script')
 </body>
 
 <!-- Mirrored from adminlte.io/themes/v3/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 May 2024 05:16:08 GMT -->
