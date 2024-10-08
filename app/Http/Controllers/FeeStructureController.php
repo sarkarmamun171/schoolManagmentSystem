@@ -46,9 +46,13 @@ class FeeStructureController extends Controller
        return back()->with('success','Fee Structure Added');
     }
     public function fee_str_list(){
+        $classes = Classe::all();
+        $academicyears = Academic_year::all();
         $fee_structures = Fee_structure::all();
         return view('admin.fee-structure.fee_structure_list',[
             'fee_structures'=>$fee_structures,
+            'classes'=>$classes,
+            'academicyears'=>$academicyears,
         ]);
     }
     public function fee_str_edit($id){

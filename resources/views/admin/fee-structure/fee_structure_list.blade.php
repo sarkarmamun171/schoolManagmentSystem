@@ -27,13 +27,38 @@
                             <div class="card-header">
                                 {{-- <h3 class="card-title">DataTable with default features</h3> --}}
                             </div>
+                            <form action="" method="post">
+                                <div class="row">
+                                    <div class="form-group col-md-5">
+                                        <label for="">Class Name</label>
+                                        <select name="class_id" id="class_id" class="form-control">
+                                            <option value="">Select Class</option>
+                                            @foreach ($classes as $classe)
+                                                <option value="{{ $classe->id }}">{{ $classe->class_name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-5">
+                                        <label for="">Academic Year</label>
+                                        <select name="academic_id" id="academic_id" class="form-control">
+                                            <option value="">Select Class</option>
+                                            @foreach ($academicyears as $academicyear)
+                                                <option value="{{ $academicyear->id }}">{{ $academicyear->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <button type="submit" class="btn btn-info">Fillter</button>
+                                    </div>
+                                </div>
+                            </form>
                             <div class="card-body">
                                 <table id="example1" class="table datatable">
                                     <thead>
                                         <tr>
                                             <th>ID</th>
                                             <th>Class Name</th>
-                                            <th>Academic Name</th>
+                                            <th>Academic Year</th>
                                             <th>Fee Head Name</th>
                                             <th>January</th>
                                             <th>February</th>
@@ -51,33 +76,37 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($fee_structures as $sl=>$fee_structure)
-                                        <tr>
-                                            <td>{{ $sl+1 }}</td>
-                                            <td>{{ $fee_structure->classes->class_name }}</td>
-                                            <td>{{ $fee_structure->academincs->name }}</td>
-                                            <td>{{ $fee_structure->feeheads->feehead_name }}</td>
-                                            <td>{{ $fee_structure->january }}</td>
-                                            <td>{{ $fee_structure->february }}</td>
-                                            <td>{{ $fee_structure->march }}</td>
-                                            <td>{{ $fee_structure->april }}</td>
-                                            <td>{{ $fee_structure->may }}</td>
-                                            <td>{{ $fee_structure->june }}</td>
-                                            <td>{{ $fee_structure->july }}</td>
-                                            <td>{{ $fee_structure->august }}</td>
-                                            <td>{{ $fee_structure->september }}</td>
-                                            <td>{{ $fee_structure->october }}</td>
-                                            <td>{{ $fee_structure->november }}</td>
-                                            <td>{{ $fee_structure->december }}</td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <a href="{{ route('fee.str.edit',$fee_structure->id) }}" class="btn btn-info shadow btn-xs sharp "><i class="fa-solid fa-pen-to-square"></i></a>
-                                                    &nbsp;
-                                                    <a href="{{ route('fee.str.delete',$fee_structure->id) }}" class="btn btn-danger shadow btn-xs sharp "><i class="fa fa-trash"></i></a>
-                                                </div>
-                                            </td>
+                                        @foreach ($fee_structures as $sl => $fee_structure)
+                                            <tr>
+                                                <td>{{ $sl + 1 }}</td>
+                                                <td>{{ $fee_structure->classes->class_name }}</td>
+                                                <td>{{ $fee_structure->academincs->name }}</td>
+                                                <td>{{ $fee_structure->feeheads->feehead_name }}</td>
+                                                <td>{{ $fee_structure->january }}</td>
+                                                <td>{{ $fee_structure->february }}</td>
+                                                <td>{{ $fee_structure->march }}</td>
+                                                <td>{{ $fee_structure->april }}</td>
+                                                <td>{{ $fee_structure->may }}</td>
+                                                <td>{{ $fee_structure->june }}</td>
+                                                <td>{{ $fee_structure->july }}</td>
+                                                <td>{{ $fee_structure->august }}</td>
+                                                <td>{{ $fee_structure->september }}</td>
+                                                <td>{{ $fee_structure->october }}</td>
+                                                <td>{{ $fee_structure->november }}</td>
+                                                <td>{{ $fee_structure->december }}</td>
+                                                <td>
+                                                    <div class="d-flex">
+                                                        <a href="{{ route('fee.str.edit', $fee_structure->id) }}"
+                                                            class="btn btn-info shadow btn-xs sharp "><i
+                                                                class="fa-solid fa-pen-to-square"></i></a>
+                                                        &nbsp;
+                                                        <a href="{{ route('fee.str.delete', $fee_structure->id) }}"
+                                                            class="btn btn-danger shadow btn-xs sharp "><i
+                                                                class="fa fa-trash"></i></a>
+                                                    </div>
+                                                </td>
 
-                                        </tr>
+                                            </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
@@ -91,23 +120,23 @@
 @endsection
 
 @section('script')
-<script>
-    $(function() {
-        $("#example1").DataTable({
-            "responsive": true,
-            "lengthChange": false,
-            "autoWidth": false,
-            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-        $('#example2').DataTable({
-            "paging": true,
-            "lengthChange": false,
-            "searching": false,
-            "ordering": true,
-            "info": true,
-            "autoWidth": false,
-            "responsive": true,
+    <script>
+        $(function() {
+            $("#example1").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
         });
-    });
-</script>
+    </script>
 @endsection

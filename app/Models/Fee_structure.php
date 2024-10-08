@@ -14,7 +14,7 @@ class Fee_structure extends Model
         return $this->belongsTo(Classe::class,'class_id');
     }
     public function academincs(){
-        return $this->belongsTo(Academic_year::class,'class_id');
+        return $this->belongsTo(Academic_year::class,'academic_id');
     }
     public function feeheads(){
         return $this->belongsTo(FeeHead::class,'fee_head_id');

@@ -42,7 +42,7 @@
                                            </select>
                                         </div>
                                         <div class="form-group col-md-4">
-                                            <label for="">Academic Name</label>
+                                            <label for="">Academic Year</label>
                                             <select name="academic_id" id="academic_id" class="form-control">
                                                 <option value="">Select Academic Name</option>
                                                 @foreach ($academicyears as $academicyear)

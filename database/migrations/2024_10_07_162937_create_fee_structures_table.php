@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('fee_structures', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('class_id')->constrained()->onDelete('cascade');
-            $table->foreignId('academic_id')->constrained()->onDelete('cascade');
-            $table->foreignId('fee_head_id')->constrained()->onDelete('cascade');
+            $table->string('class_id');
+            $table->string('academic_id');
+            $table->string('fee_head_id');
             $table->string('april')->nullable();
             $table->string('may')->nullable();
             $table->string('june')->nullable();
