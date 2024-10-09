@@ -58,5 +58,9 @@ Route::group(['middleware' => 'admin.auth'], function () {
     //Student Managment
     Route::get('/student/add',[StudentController::class,'add_student'])->name('add.student');
     Route::post('/student/store',[StudentController::class,'store_student'])->name('store.student');
+    Route::get('/student/list',[StudentController::class,'list_student'])->name('list.student');
+    Route::get('/student/edit/{id}',[StudentController::class,'edit_student'])->name('edit.student');
+    Route::post('/student/update/{id}',[StudentController::class,'update_student'])->name('update.student');
+    Route::get('/student/delete/{id}',[StudentController::class,'delete_student'])->name('delete.student');
 });
 // });
