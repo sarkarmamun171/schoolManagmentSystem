@@ -22,10 +22,8 @@
 
     <section class="content">
         <div class="container-fluid">
-
             <div class="row">
                 <div class="col-lg-3 col-6">
-
                     <div class="small-box bg-info">
                         <div class="inner">
                             <h3>150</h3>
@@ -38,9 +36,7 @@
                                 class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-
                 <div class="col-lg-3 col-6">
-
                     <div class="small-box bg-success">
                         <div class="inner">
                             <h3>53<sup style="font-size: 20px">%</sup></h3>
@@ -83,10 +79,7 @@
                                 class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-
             </div>
-
-
             <div class="row">
 
 
@@ -94,6 +87,5 @@
 
         </div>
     </section>
-
 </div>
 @endsection

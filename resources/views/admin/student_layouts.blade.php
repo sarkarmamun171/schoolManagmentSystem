@@ -218,11 +218,16 @@
                         data-accordion="false">
 
                         <li class="nav-item menu-open">
-                            <a href="{{ route('admin.dashboard') }}" class="nav-link active">
+                            <a href="{{ route('student.dashboard') }}" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p> Dashboard </p>
                             </a>
-
+                        </li>
+                        <li class="nav-item menu-open">
+                            <a href="{{ route('student.logout') }}" class="nav-link">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                <p> Logout </p>
+                            </a>
                         </li>
 
                         <li class="nav-item">
@@ -243,128 +248,7 @@
                             </ul>
                         </li>
 
-                        <li class="nav-header">System Analysis</li>
 
-                        <li class="nav-item">
-                            <a href="{{ route('academicyear.index') }}" class="nav-link">
-                                <i class="nav-icon far fa-image"></i>
-                                <p>
-                                    Academic Year
-                                    <i class="fas fa-angle-left right"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{ route('academicyear.index') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Add Academic Year</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('academicyear.list') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>List Academic Year</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('admin.add.class') }}" class="nav-link">
-                                <i class="fa-solid fa-pen-nib"></i>
-                                <p>
-                                    Class
-                                    <i class="fas fa-angle-left right"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{ route('admin.add.class') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Add Class</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('admin.class.list') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>List Class</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="fa-solid fa-plus"></i>
-                                <p> Fee
-                                    <i class="fas fa-angle-left right"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{ route('fee.head.add') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Add Fee</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('fee.head.list') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>List Fee</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="fa-solid fa-clipboard"></i>
-                                <p> Fee Structure Mgt
-                                    <i class="fas fa-angle-left right"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{ route('fee.str.add') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Add Fee Structure</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('fee.str.list') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>List Fee Structure</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="fa-solid fa-school"></i>
-                                <p> Student Managment
-                                    <i class="fas fa-angle-left right"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{ route('add.student') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Add Student</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('list.student') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>List Student</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('admin.logout') }}" class="nav-link">
-                                <i class="fa-solid fa-right-from-bracket"></i>
-                                <p> Logout
-                                </p>
-                            </a>
-
-                        </li>
                     </ul>
                 </nav>
 
