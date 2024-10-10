@@ -76,5 +76,6 @@ Route::group(['prefix'=>'student'],function(){
     Route::group(['middleware'=>'auth'],function(){
         Route::get('/dashboard',[StudentController::class,'student_dashboard'])->name('student.dashboard');
         Route::get('/logout',[StudentController::class,'student_logout'])->name('student.logout');
+        Route::get('/changepassword',[StudentController::class,'student_changepassword'])->name('student.changepassword');
     });
 });

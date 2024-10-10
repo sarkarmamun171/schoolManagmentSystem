@@ -33,6 +33,9 @@ class StudentController extends Controller
         Auth::logout();
         return back();
     }
+    public function student_changepassword(){
+        return view();
+    }
     public function add_student(){
         $classes=Classe::all();
         $academicyears= Academic_year::all();
