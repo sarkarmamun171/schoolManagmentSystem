@@ -8,9 +8,31 @@ use App\Models\Student;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class StudentController extends Controller
 {
+    public function student_login(){
+        return view('admin.student.login');
+    }
+    public function student_authenticate(Request $request){
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            if (Auth::user()->role != 'student') {
+                Auth::logout();
+                return redirect()->route('student.login')->with('error', 'Unautherise User.Access Denied');
+            }
+            return redirect()->route('student.dashboard');
+        }else{
+            return redirect()->route('student.login')->with('fail', 'Something Wrong');
+        }
+    }
+    public function student_dashboard(){
+        return view('admin.student.student_dashboard');
+    }
+    public function student_logout(){
+        Auth::logout();
+        return back();
+    }
     public function add_student(){
         $classes=Classe::all();
         $academicyears= Academic_year::all();

@@ -62,5 +62,19 @@ Route::group(['middleware' => 'admin.auth'], function () {
     Route::get('/student/edit/{id}',[StudentController::class,'edit_student'])->name('edit.student');
     Route::post('/student/update/{id}',[StudentController::class,'update_student'])->name('update.student');
     Route::get('/student/delete/{id}',[StudentController::class,'delete_student'])->name('delete.student');
+
 });
 // });
+ //Student Login
+Route::group(['prefix'=>'student'],function(){
+    //guest
+    Route::group(['middleware'=>'guest'],function(){
+        Route::get('/login',[StudentController::class,'student_login'])->name('student.login');
+        Route::post('/authenticate',[StudentController::class,'student_authenticate'])->name('student.authenticate');
+    });
+    //Auth
+    Route::group(['middleware'=>'auth'],function(){
+        Route::get('/dashboard',[StudentController::class,'student_dashboard'])->name('student.dashboard');
+        Route::get('/logout',[StudentController::class,'student_logout'])->name('student.logout');
+    });
+});
