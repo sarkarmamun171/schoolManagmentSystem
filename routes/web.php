@@ -77,5 +77,6 @@ Route::group(['prefix'=>'student'],function(){
         Route::get('/dashboard',[StudentController::class,'student_dashboard'])->name('student.dashboard');
         Route::get('/logout',[StudentController::class,'student_logout'])->name('student.logout');
         Route::get('/changepassword',[StudentController::class,'student_changepassword'])->name('student.changepassword');
+        Route::get('/update-password',[StudentController::class,'student_updatepassword'])->name('student.updatepassword');
     });
 });

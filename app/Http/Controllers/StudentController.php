@@ -34,7 +34,7 @@ class StudentController extends Controller
         return back();
     }
     public function student_changepassword(){
-        return view();
+        return view('admin.student.changepassword');
     }
     public function add_student(){
         $classes=Classe::all();
