@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Academic_year;
+use App\Models\Announcement;
 use App\Models\Classe;
 use App\Models\Student;
 use Carbon\Carbon;
@@ -27,7 +28,11 @@ class StudentController extends Controller
         }
     }
     public function student_dashboard(){
-        return view('admin.student.student_dashboard');
+        $announcements = Announcement::where('type','student')->latest()->limit(1)->get();
+        // dd( $announcements);
+        return view('admin.student.student_dashboard',[
+            'announcements'=>$announcements,
+        ]);
     }
     public function student_logout(){
         Auth::logout();
