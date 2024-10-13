@@ -68,6 +68,9 @@ Route::group(['middleware' => 'admin.auth'], function () {
     Route::get('/announcement/index',[AnnouncementController::class,'index'])->name('announcement.index');
     Route::post('/announcement/store',[AnnouncementController::class,'store'])->name('announcement.store');
     Route::get('/announcement/show',[AnnouncementController::class,'show'])->name('announcement.show');
+    Route::get('/announcement/edit/{id}',[AnnouncementController::class,'edit'])->name('announcement.edit');
+    Route::post('/announcement/update/{id}',[AnnouncementController::class,'update'])->name('announcement.update');
+    Route::get('/announcement/destroy/{id}',[AnnouncementController::class,'destroy'])->name('announcement.destroy');
 });
 // });
  //Student Login

@@ -20,6 +20,9 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
+                    @if (session('delete'))
+                        <div class="alert alert-danger">{{ session('delete') }}</div>
+                    @endif
                     <div class="card">
                         <div class="card-header">
                             {{-- <h3 class="card-title">DataTable with default features</h3> --}}
@@ -30,7 +33,7 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Message</th>
-                                        <th>Type</th>
+                                        <th>BroadCast To</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -42,9 +45,9 @@
                                         <td>{{ $announcement->type }}</td>
                                         <td>
                                             <div class="d-flex">
-                                                <a href="" class="btn btn-info shadow btn-xs sharp "><i class="fa-solid fa-pen-to-square"></i></a>
+                                                <a href="{{ route('announcement.edit',$announcement->id) }}" class="btn btn-info shadow btn-xs sharp "><i class="fa-solid fa-pen-to-square"></i></a>
                                                 &nbsp;
-                                                <a href="" class="btn btn-danger shadow btn-xs sharp "><i class="fa fa-trash"></i></a>
+                                                <a href="{{ route('announcement.destroy',$announcement->id) }}" class="btn btn-danger shadow btn-xs sharp "><i class="fa fa-trash"></i></a>
                                             </div>
                                         </td>
                                     </tr>
@@ -54,7 +57,7 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Message</th>
-                                        <th>Type</th>
+                                        <th>BroadCast To</th>
                                         <th>Action</th>
                                     </tr>
                                 </tfoot>

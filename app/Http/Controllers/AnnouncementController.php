@@ -55,24 +55,37 @@ class AnnouncementController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Announcement $announcement)
+    public function edit($id)
     {
-        //
+        $announcements = Announcement::find($id);
+        return view('admin.announcement.edit',[
+            'announcements'=>$announcements,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Announcement $announcement)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'message'=>'required',
+            'type'=>'required',
+        ]);
+        Announcement::find($id)->update([
+            'message'=>$request->message,
+            'type'=>$request->type,
+            'updated_at'=>Carbon::now(),
+        ]);
+        return back()->with('success','Announcement Updated Successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Announcement $announcement)
+    public function destroy($id)
     {
-        //
+        Announcement::find($id)->delete();
+        // return back()-with('delete','Announcement Deleted Successfully');
     }
 }
