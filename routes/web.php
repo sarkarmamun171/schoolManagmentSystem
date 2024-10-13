@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AcademicYearController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\ClassesController;
 use App\Http\Controllers\FeeHeadContoller;
 use App\Http\Controllers\FeeStructureController;
@@ -63,6 +64,10 @@ Route::group(['middleware' => 'admin.auth'], function () {
     Route::post('/student/update/{id}',[StudentController::class,'update_student'])->name('update.student');
     Route::get('/student/delete/{id}',[StudentController::class,'delete_student'])->name('delete.student');
 
+    //Announcement Managment
+    Route::get('/announcement/index',[AnnouncementController::class,'index'])->name('announcement.index');
+    Route::post('/announcement/store',[AnnouncementController::class,'store'])->name('announcement.store');
+    Route::get('/announcement/show',[AnnouncementController::class,'show'])->name('announcement.show');
 });
 // });
  //Student Login
