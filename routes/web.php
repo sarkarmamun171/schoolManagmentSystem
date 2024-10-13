@@ -7,6 +7,7 @@ use App\Http\Controllers\ClassesController;
 use App\Http\Controllers\FeeHeadContoller;
 use App\Http\Controllers\FeeStructureController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\SubjectController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -71,6 +72,14 @@ Route::group(['middleware' => 'admin.auth'], function () {
     Route::get('/announcement/edit/{id}',[AnnouncementController::class,'edit'])->name('announcement.edit');
     Route::post('/announcement/update/{id}',[AnnouncementController::class,'update'])->name('announcement.update');
     Route::get('/announcement/destroy/{id}',[AnnouncementController::class,'destroy'])->name('announcement.destroy');
+
+    //Subject Management
+    Route::get('subject/index',[SubjectController::class,'index'])->name('subject.index');
+    Route::post('subject/store',[SubjectController::class,'store'])->name('subject.store');
+    Route::get('subject/show',[SubjectController::class,'show'])->name('subject.show');
+    Route::get('subject/edit/{id}',[SubjectController::class,'edit'])->name('subject.edit');
+    Route::post('subject/update/{id}',[SubjectController::class,'update'])->name('subject.update');
+    Route::get('subject/destroy/{id}',[SubjectController::class,'destroy'])->name('subject.destroy');
 });
 // });
  //Student Login

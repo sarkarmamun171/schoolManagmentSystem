@@ -359,7 +359,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="fa-solid fa-school"></i>
+                                <i class="fa-solid fa-scroll"></i>
                                 <p> Announcement Managment
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
@@ -375,6 +375,28 @@
                                     <a href="{{ route('announcement.show') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>List Announcement</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fa-solid fa-sliders"></i>
+                                <p> Subject Managment
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('subject.index')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Subject</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('subject.show')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>List Subject</p>
                                     </a>
                                 </li>
                             </ul>
