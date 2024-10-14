@@ -3,6 +3,7 @@
 use App\Http\Controllers\AcademicYearController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\AssignSubjectToClassController;
 use App\Http\Controllers\ClassesController;
 use App\Http\Controllers\FeeHeadContoller;
 use App\Http\Controllers\FeeStructureController;
@@ -80,6 +81,9 @@ Route::group(['middleware' => 'admin.auth'], function () {
     Route::get('subject/edit/{id}',[SubjectController::class,'edit'])->name('subject.edit');
     Route::post('subject/update/{id}',[SubjectController::class,'update'])->name('subject.update');
     Route::get('subject/destroy/{id}',[SubjectController::class,'destroy'])->name('subject.destroy');
+
+    //Assign Subject To Class
+    Route::get('assign-subject/index',[AssignSubjectToClassController::class,'index'])->name('assign.index');
 });
 // });
  //Student Login

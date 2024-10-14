@@ -402,6 +402,28 @@
                             </ul>
                         </li>
                         <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fa-solid fa-sliders"></i>
+                                <p> Assign Subject
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('assign.index') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Assign Subject</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>List Assign Subject</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ route('admin.logout') }}" class="nav-link">
                                 <i class="fa-solid fa-right-from-bracket"></i>
                                 <p> Logout
