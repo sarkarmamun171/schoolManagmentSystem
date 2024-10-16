@@ -27,7 +27,7 @@
                             <div class="card-header">
                                 <h3 class="card-title">Add Assign Subject</h3>
                             </div>
-                            <form action="" method="POST">
+                            <form action="{{ route('assign.store') }}" method="POST">
                                 @csrf
                                 <div class="card-body">
                                     <div class="form-group">
@@ -43,8 +43,8 @@
                                         <label for="">Subject Name</label>
                                             @foreach ($subjects as $subject)
                                                 <div class="form-check">
-                                                    <input type="checkbox" id="subject1" name="subject_id[]" value="{{ $subject->id }}">
-                                                    <label for="subject1">{{ $subject->subject }}</label>
+                                                    <input type="checkbox" id="subject{{ $subject->id }}" name="subject_id[]" value="{{ $subject->id }}">
+                                                    <label for="subject{{ $subject->id }}">{{ $subject->subject }}</label>
                                                 </div>
                                             @endforeach
                                     </div>

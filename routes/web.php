@@ -84,6 +84,7 @@ Route::group(['middleware' => 'admin.auth'], function () {
 
     //Assign Subject To Class
     Route::get('assign-subject/index',[AssignSubjectToClassController::class,'index'])->name('assign.index');
+    Route::post('assign-subject/store',[AssignSubjectToClassController::class,'store'])->name('assign.store');
 });
 // });
  //Student Login

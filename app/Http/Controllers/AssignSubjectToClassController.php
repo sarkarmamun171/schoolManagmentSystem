@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AssignSubjectToClass;
 use App\Models\Classe;
 use App\Models\Subject;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class AssignSubjectToClassController extends Controller
@@ -35,7 +36,26 @@ class AssignSubjectToClassController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $subject = implode(',',$request->subject_id);
+        $request->validate([
+            'class_id'=>'required',
+            'subject_id'=>'required',
+        ]);
+        $class_id=$request->class_id;
+        $subject_id=$request->subject_id;
+        foreach($subject_id as $subject_id){
+            AssignSubjectToClass::updateOrCreate(
+                [
+                'class_id'=>$class_id,
+                'subject_id'=>$subject_id
+               ],
+               [
+                 'class_id'=>$class_id,
+                 'subject_id'=>$subject_id
+               ]
+        );
+        }
+        return back()->with('success','Assign Subject Added');
     }
 
     /**
